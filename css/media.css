@@ -1,0 +1,110 @@
+/* Responsive */
+@media (max-width: 768px) {
+	.hero-content h1 {
+		font-size: 2.5rem;
+	}
+
+	.nav-links {
+		position: fixed;
+		right: -100%;
+		top: 70px;
+		flex-direction: column;
+		background: #3e2723;
+		width: 200px;
+		padding: 2rem;
+		height: calc(100% - 70px);
+		transition: right 0.3s ease;
+	}
+
+	.nav-links li {
+		margin-bottom: 1.5rem;
+	}
+
+	.nav-links li a {
+		color: white;
+		font-size: 1.1rem;
+	}
+
+	.burger {
+		display: flex;
+	}
+
+	/* Активне меню */
+	.nav-links.active {
+		right: 0;
+	}
+
+	/* Анімація хрестика */
+	.burger.toggle span:nth-child(1) {
+		transform: rotate(45deg) translate(8px, 8px);
+	}
+
+	.burger.toggle span:nth-child(2) {
+		opacity: 0;
+	}
+
+	.burger.toggle span:nth-child(3) {
+		transform: rotate(-45deg) translate(5px, -5px);
+	}
+
+	.menu-grid {
+		grid-template-columns: 1fr;
+	}
+
+	.gallery-grid {
+		grid-template-columns: repeat(2, 1fr);
+		gap: 0.8rem;
+	}
+
+	.order-type-selector {
+		flex-direction: column;
+		align-items: center;
+	}
+
+	.order-form {
+		padding: 1.5rem;
+	}
+
+	.form-group {
+		margin-bottom: 1.2rem;
+	}
+
+	.form-group label {
+		font-size: 0.9rem;
+	}
+
+	button,
+	.cta-btn {
+		min-height: 48px;
+	}
+
+	.menu-filters {
+		gap: 0.5rem;
+	}
+
+	.filter-btn {
+		padding: 0.6rem 1.2rem;
+		font-size: 0.9rem;
+	}
+
+	.map-frame {
+		height: 300px;
+	}
+
+	.map-info {
+		font-size: 1rem;
+	}
+}
+
+@media (max-width: 480px) {
+	.gallery-grid {
+		grid-template-columns: 1fr;
+	}
+}
+
+@media (hover: none) {
+	.menu-item:hover,
+	.gallery-item:hover img {
+		transform: none;
+	}
+}

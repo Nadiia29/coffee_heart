@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="uk">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="./css/reset.css" />
+		<link rel="stylesheet" href="./css/style.css" />
+		<link rel="stylesheet" href="./css/media.css" />
+
+		<title>Кав'ярня "Coffee Heart"</title>
+	</head>
+
+	<body>
+		<header>
+			<nav>
+				<div class="logo">☕❤️ Coffee Heart</div>
+				<ul class="nav-links">
+					<li><a href="#home">Головна</a></li>
+					<li><a href="#order">Замовити</a></li>
+					<li><a href="#menu">Меню</a></li>
+					<li><a href="#gallery">Галерея</a></li>
+					<li><a href="#map">Контакти</a></li>
+				</ul>
+
+				<div class="burger">
+					<span></span>
+					<span></span>
+					<span></span>
+				</div>
+			</nav>
+		</header>
+
+		<section class="hero" id="home">
+			<div class="hero-content">
+				<h1>Кав'ярня "Coffee Heart"</h1>
+				<p>Найкраща кава та затишна атмосфера в серці Києва</p>
+				<a href="#order" class="cta-btn">Замовити зараз</a>
+			</div>
+		</section>
+
+		<section class="menu-section" id="menu">
+			<div class="container">
+				<h2>Наше меню</h2>
+
+				<div class="menu-filters">
+					<button class="filter-btn active" data-category="all" class="active">
+						📋 Все
+					</button>
+					<button class="filter-btn" data-category="coffee">☕ Кава</button>
+					<button class="filter-btn" data-category="tea">🍵 Чай</button>
+					<button class="filter-btn" data-category="desserts">🍰 Десерти</button>
+				</div>
+
+				<div class="menu-grid" id="menu-grid"></div>
+			</div>
+		</section>
+
+		<section class="order-section" id="order">
+			<div class="container">
+				<h2>Зробити замовлення</h2>
+
+				<div class="order-type-selector">
+					<button type="button" class="type-btn active" data-type="takeaway">
+						З собою
+					</button>
+
+					<button type="button" class="type-btn" data-type="table">
+						Забронювати столик
+					</button>
+				</div>
+
+				<form class="order-form" id="order-form">
+					<div class="form-group">
+						<label for="name">Ваше ім'я *</label>
+						<input type="text" id="name" required />
+					</div>
+
+					<div class="form-group">
+						<label for="phone">Телефон *</label>
+						<input type="tel" id="phone" required />
+					</div>
+
+					<div class="form-group takeaway-field">
+						<label for="product">Що замовляєте *</label>
+
+						<p class="hint">
+							Утримуйте Ctrl (або Cmd на Mac) щоб обрати кілька позицій
+						</p>
+
+						<select id="product" multiple size="12" required>
+							<optgroup label="☕ Кава">
+								<option value="espresso" data-price="45">Еспресо — 45 грн</option>
+								<option value="cappuccino" data-price="65">
+									Капучино — 65 грн
+								</option>
+								<option value="latte" data-price="70">Лате — 70 грн</option>
+								<option value="americano" data-price="50">
+									Американо — 50 грн
+								</option>
+							</optgroup>
+
+							<optgroup label="🍵 Чай">
+								<option value="green-tea" data-price="40">
+									Зелений чай — 40 грн
+								</option>
+								<option value="black-tea" data-price="40">
+									Чорний чай — 40 грн
+								</option>
+								<option value="herbal-tea" data-price="45">
+									Трав'яний чай — 45 грн
+								</option>
+							</optgroup>
+
+							<optgroup label="🍰 Десерти">
+								<option value="cheesecake" data-price="80">Чізкейк — 80 грн</option>
+								<option value="tiramisu" data-price="85">Тірамісу — 85 грн</option>
+								<option value="croissant" data-price="55">Круасан — 55 грн</option>
+							</optgroup>
+						</select>
+					</div>
+
+					<div class="form-group takeaway-field">
+						<div class="total-display">
+							<strong>Загальна сума:</strong> <span id="total-price">0</span> грн
+						</div>
+					</div>
+
+					<div class="form-group takeaway-field">
+						<label for="pickup-time">Час для отримання *</label>
+						<input type="time" id="pickup-time" />
+					</div>
+
+					<!-- ========== ПОЛЯ ДЛЯ "БРОНЮВАННЯ СТОЛИКА" ========== -->
+					<div class="form-group table-field hidden">
+						<label for="date">Дата бронювання *</label>
+						<input type="date" id="date" />
+					</div>
+
+					<div class="form-group table-field hidden">
+						<label for="time">Час бронювання *</label>
+						<input type="time" id="time" />
+					</div>
+
+					<div class="form-group table-field hidden">
+						<label for="guests">Кількість гостей *</label>
+						<select id="guests">
+							<option value="1">1 особа</option>
+							<option value="2">2 особи</option>
+							<option value="3">3 особи</option>
+							<option value="4">4 особи</option>
+							<option value="5+">5+ осіб</option>
+						</select>
+					</div>
+
+					<!-- Коментар - для обох типів -->
+					<div class="form-group">
+						<label for="comments">Коментар</label>
+						<textarea id="comments" rows="3"></textarea>
+					</div>
+
+					<button type="submit" class="cta-btn" style="width: 100%">
+						Підтвердити замовлення
+					</button>
+				</form>
+			</div>
+		</section>
+
+		<section class="gallery-section" id="gallery">
+			<div class="container">
+				<h2>Галерея</h2>
+				<div class="gallery-grid" id="gallery-grid"></div>
+			</div>
+		</section>
+
+		<div class="lightbox hidden" id="lightbox">
+			<div class="lightbox-content">
+				<button class="lightbox-close" id="lightbox-close">✕</button>
+				<img id="lightbox-image" src="" alt="" />
+			</div>
+		</div>
+
+		<section class="map-section" id="map">
+			<div class="container">
+				<h2>Знайдіть нас</h2>
+				<iframe
+					class="map-frame"
+					src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2540.864348398927!2d30.523402!3d50.450441!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40d4ce50d3a2fe53%3A0xc4a621c41e7d08cd!2z0JzQsNC50LTQsNC9INCd0LXQt9Cw0LvQtdC20L3QvtGB0YLQuCwg0JrQuNGX0LIsIDAyMDAw!5e0!3m2!1suk!2sua!4v1234567890"
+					frameborder="0"
+					allowfullscreen
+					loading="lazy"
+					referrerpolicy="no-referrer-when-downgrade"
+				>
+				</iframe>
+
+				<div class="map-info">
+					<p><strong>📍 Адреса:</strong> вул. Хрещатик 1, Київ</p>
+					<p><strong>📞 Телефон:</strong> +380 44 123 45 67</p>
+					<p><strong>🕐 Години роботи:</strong> Пн–Нд: 08:00-22:00</p>
+				</div>
+			</div>
+		</section>
+
+		<footer>
+			<div class="footer-content">
+				<p>&copy; 2025 Кав'ярня "Coffee Heart". Всі права захищені.</p>
+				<p>Створено з ❤️ для любителів кави</p>
+			</div>
+		</footer>
+
+		<div class="modal hidden" id="success-modal">
+			<div class="modal-content">
+				<button class="modal-close" id="modal-close">&times;</button>
+				<h3>Дякуємо за замовлення ☕</h3>
+				<p id="modal-message"></p>
+				<button class="modal-btn" id="modal-ok">Гаразд</button>
+			</div>
+		</div>
+
+		<script src="./js/main.js"></script>
+	</body>
+</html>
