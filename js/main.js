@@ -37,6 +37,7 @@ document.addEventListener('DOMContentLoaded', () => {
 		items.forEach((item) => {
 			const div = document.createElement('div');
 			div.className = 'menu-item';
+			div.dataset.category = item.category;
 
 			div.innerHTML = `
 				<h3>${item.name}</h3>
